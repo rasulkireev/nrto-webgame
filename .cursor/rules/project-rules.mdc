@@ -1,0 +1,7 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+
+- Don't offer to run `npm run dev` I will do this myself.

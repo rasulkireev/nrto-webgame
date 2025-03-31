@@ -29,11 +29,17 @@ export class Preloader extends Scene
 
     preload ()
     {
-        //  Load the assets for the game - Replace with your own assets
+        //  Load the assets for the game
         this.load.setPath('assets');
 
         this.load.image('logo', 'logo.png');
         this.load.image('star', 'star.png');
+        this.load.image('background', 'bg.png');
+
+        // Load naruto assets when we have them
+        // this.load.image('naruto', 'naruto/naruto.png');
+        // this.load.image('grass', 'naruto/grass.png');
+        // this.load.image('rock', 'naruto/rock.png');
     }
 
     create ()

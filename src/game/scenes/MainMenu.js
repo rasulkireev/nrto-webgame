@@ -12,16 +12,31 @@ export class MainMenu extends Scene
 
     create ()
     {
-        this.add.image(512, 384, 'background');
+        // Set a green background
+        this.cameras.main.setBackgroundColor(0x267F00);
+        this.add.image(512, 384, 'background').setAlpha(0.3);
 
         this.logo = this.add.image(512, 300, 'logo').setDepth(100);
 
-        this.add.text(512, 460, 'Main Menu', {
-            fontFamily: 'Arial Black', fontSize: 38, color: '#ffffff',
+        // Set Naruto-themed game title
+        this.add.text(512, 460, 'NARUTO RUNNER', {
+            fontFamily: 'Arial Black', fontSize: 38, color: '#ff9900',
             stroke: '#000000', strokeThickness: 8,
             align: 'center'
         }).setDepth(100).setOrigin(0.5);
-        
+
+        // Add a start game button
+        const startButton = this.add.text(512, 550, 'START GAME', {
+            fontFamily: 'Arial Black', fontSize: 24, color: '#ffffff',
+            stroke: '#000000', strokeThickness: 6,
+            align: 'center'
+        }).setDepth(100).setOrigin(0.5).setPadding(20);
+
+        startButton.setInteractive({ useHandCursor: true })
+            .on('pointerover', () => startButton.setStyle({ fill: '#ff9900' }))
+            .on('pointerout', () => startButton.setStyle({ fill: '#ffffff' }))
+            .on('pointerdown', () => this.changeScene());
+
         EventBus.emit('current-scene-ready', this);
     }
 

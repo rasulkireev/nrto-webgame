@@ -12,7 +12,14 @@ const config = {
     width: 1024,
     height: 768,
     parent: 'game-container',
-    backgroundColor: '#028af8',
+    backgroundColor: '#267F00', // Green background for grass
+    physics: {
+        default: 'arcade',
+        arcade: {
+            gravity: { y: 0 }, // No gravity for top-down
+            debug: false
+        }
+    },
     scene: [
         Boot,
         Preloader,
